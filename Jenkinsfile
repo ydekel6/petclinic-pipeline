@@ -13,7 +13,7 @@ pipeline {
                 sh '''
                     git clone https://github.com/ydekel6/petclinic-pipeline.git .
                     ./jenkins/scm/scm.sh
-                ''
+                '''
             }
         }
 
