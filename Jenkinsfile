@@ -5,14 +5,16 @@ pipeline {
 /*     environment {
         PASS = credentials('registry-pass') 
     } */
-
     stages {
 
         stage('SCM checkout') {
             steps {
                 sh '''
+                    ls -al
+                    rm -rf * .git
+                    ls -al
                     git clone https://github.com/ydekel6/petclinic-pipeline.git .
-                    ./jenkins/scm/scm.sh
+                    ./jenkins/scm/scm.sh mvn -B -DskipTests clean package
                 '''
             }
         }
@@ -55,4 +57,9 @@ pipeline {
             }
         }
     }
+/*     post {
+        always {
+            cleanWS()
+        }
+    } */
 }
