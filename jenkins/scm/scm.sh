@@ -10,4 +10,4 @@ echo "***************************"
 
 WORKSPACE=/var/jenkins_home/workspace/petclinic-pipeline
 
-docker run --rm  -v  $PWD/spring-petclinic:/app -v /root/.m2/:/root/.m2/ -w /app openjdk:9-jdk "$@"
+docker run --rm  -v  $WORKSPACE/spring-petclinic:/app -v /root/.m2/:/root/.m2/ -w /app openjdk:9-jdk "$@"
