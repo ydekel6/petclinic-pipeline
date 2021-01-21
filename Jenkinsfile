@@ -14,7 +14,7 @@ pipeline {
                     rm -rf * .git
                     ls -al
                     git clone https://github.com/ydekel6/petclinic-pipeline.git .
-                    ./jenkins/scm/scm.sh ./mvnw -B -DskipTests clean package
+                    ./jenkins/scm/scm.sh ./spring-petclinic/mvnw -B -DskipTests clean package
                 '''
             }
         }
